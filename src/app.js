@@ -67,7 +67,7 @@ Use the encryptString function given above to encrypt the secret code
 
 app.get('/api/get-env', (req, res) => {
   // Extract the secret code from the environment variable
-  const secretCode = process.env.SECRET_CODE;
+  const secretCode = process.env.SECRET;
 
   // Check if the secret code is present in the environment
   if (!secretCode) {
