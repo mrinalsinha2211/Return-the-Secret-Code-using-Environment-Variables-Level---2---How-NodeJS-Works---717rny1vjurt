@@ -30,6 +30,7 @@ app.get('/api/get-env', (req, res) => {
     return res.status(500).json({
       error:'Secret code not found in the environment.'
     })
+  }
      const encryptedSecret = encryptString(secretCode);
 
   // Respond with the encrypted secret code
