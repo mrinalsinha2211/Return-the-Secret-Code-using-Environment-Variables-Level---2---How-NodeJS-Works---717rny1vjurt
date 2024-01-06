@@ -25,6 +25,17 @@ Use the encryptString function given above to encrypt the secret code
 
 app.get('/api/get-env', (req, res) => {
     //Write your code here
+  const sercetCode=process.evn.SECRET_CODE;
+  if(!sercetCode){
+    return res.status(500).json({
+      error:'Secret code not found in the environment.'
+    })
+     const encryptedSecret = encryptString(secretCode);
+
+  // Respond with the encrypted secret code
+  res.status(200).json({
+    secret: encryptedSecret
+  });
 });
 
 module.exports = app;
